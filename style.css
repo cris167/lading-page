@@ -1,0 +1,239 @@
+/*
+ * Import Poppins for main body text and Bebas Neue for the main titles
+ */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    /* Updated gradient for a deeper purple/magenta look */
+    background: linear-gradient(
+        150deg,
+        rgba(99, 10, 150, 1) 0%,
+        rgba(50, 10, 90, 1) 30%,
+        rgba(25, 5, 50, 1) 65%,
+        rgba(15, 0, 40, 1) 100%
+    );
+    font-family: 'Poppins', sans-serif; /* Cleaner body font */
+}
+
+header {
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px; /* Add padding to prevent content from hitting the edges */
+}
+
+/* ---------------- MENU ---------------- */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0; /* Slightly more padding for the menu */
+    position: relative;
+}
+
+.logo {
+    color: #CC42E1; /* Adjusted color to a bright magenta/purple */
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600; /* Poppins semi-bold */
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    transition: 0.3s;
+    font-weight: 400; /* Regular weight */
+}
+
+.navbar ul li a:hover {
+    color: #CC42E1; /* Hover color matches the logo */
+}
+
+/* Mobile menu hidden for desktop */
+#menu,
+.menu-icono,
+.menu label {
+    display: none;
+}
+
+/* ---------------- HEADER CONTENT (Hero Section) ---------------- */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Center content vertically within the remaining header space */
+    height: calc(100vh - 100px); 
+    padding-top: 50px; /* Space from menu */
+    padding-bottom: 50px;
+}
+
+.header-txt {
+    flex: 1 1 50%;
+    max-width: 550px; /* Limit text width as in the image */
+    padding-right: 50px;
+}
+
+/* Main title styling */
+.header-txt .title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px; /* Larger font size for the main title */
+    line-height: 0.8; /* Tight line height */
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.header-txt .subtitle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    line-height: 1;
+    color: #ffffff;
+    margin-bottom: 30px; /* Space before paragraph */
+    text-transform: uppercase;
+}
+
+
+.header-txt p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #d4d4d4; /* Lighter gray for body text */
+    margin-bottom: 30px;
+    font-weight: 300; /* Light weight for body text */
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 40px; /* Wider padding for a larger button */
+    /* Button gradient adjusted for the pink/magenta color */
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 227, 1) 0%,
+        rgba(215, 60, 240, 1) 100%
+    );
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px; /* Less rounded corners */
+    box-shadow: 0 5px 20px rgba(188, 48, 237, 0.5); /* Shadow for lift */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    transform: translateY(-3px); /* Subtle lift on hover */
+    box-shadow: 0 8px 25px rgba(188, 48, 237, 0.7);
+}
+
+.header-img {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the image vertically within its container */
+}
+
+.header-img img {
+    max-width: 500px; /* Increased size for the decorative image */
+    width: 100%;
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .header-txt {
+        padding: 0;
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .header-txt .title {
+        font-size: 80px;
+    }
+    
+    .header-txt .subtitle {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    
+    .header-img img {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile Menu Display (using your original base logic) */
+    .menu-icono {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #3f0a71; /* Dark background for mobile menu */
+        display: none;
+        text-align: center;
+        z-index: 100;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar ul li a:hover {
+        color: #CC42E1;
+    }
+
+    #menu:checked ~ .navbar {
+        display: block;
+    }
+    
+    /* Further reduction for smaller screens */
+    .header-txt .title {
+        font-size: 60px;
+    }
+    
+    .header-txt .subtitle {
+        font-size: 40px;
+    }
+}
